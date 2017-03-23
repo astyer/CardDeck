@@ -10,4 +10,9 @@ public class Card {
         rank = cardRank;
         suit = cardSuit;
     }
+
+    public String printable()
+    {
+        return rank + " of " + suit;
+    }
 }

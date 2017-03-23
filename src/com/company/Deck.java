@@ -4,17 +4,20 @@ import java.util.*;
 public class Deck {
 
     public ArrayList cards = new ArrayList<Card>();
-    public int size;
-    public Deck(String[] ranks, String[] suits) {
-        for(int i = 0; i < suits.length; i++)
+    public Deck(String[] ranks, String[] suits, int numOfEachSuit) {
+        int j = 0;
+        while(j<numOfEachSuit)
         {
-            for(int x = 0; x < ranks.length; x++)
+            for(int i = 0; i < suits.length; i++)
             {
-                Card dummy = new Card(ranks[x], suits[i]);
-                cards.add(dummy);
+                for(int x = 0; x < ranks.length; x++)
+                {
+                    Card dummy = new Card(ranks[x], suits[i]);
+                    cards.add(dummy);
+                }
             }
+            j++;
         }
-        size = cards.size();
     }
 
 }
